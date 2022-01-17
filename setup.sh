@@ -10,5 +10,6 @@ apt-get install npm -y
 git clone https://github.com/JoaquimXG/http-echo.git
 
 cd http-echo
+npm ci
 
 npm run prod 8080
