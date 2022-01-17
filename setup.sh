@@ -1,5 +1,4 @@
 #!/bin/sh
-
 # Basic setup for HTTP echo server
 
 apt-get update

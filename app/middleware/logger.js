@@ -12,6 +12,7 @@ module.exports = (req, res, next) => {
         cookie: req.cookies,
         sessionId: req.sessionID,
         accept: req.headers.accept,
+        host: req.hostname
       },
       method: req.method,
       sessionId: req.sessionId,

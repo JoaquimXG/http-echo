@@ -1,0 +1,10 @@
+#cloud-config
+packages:
+ - nodejs
+ - npm
+
+runcmd:
+ - [git, clone, 'https://github.com/JoaquimXG/http-echo.git', /home/ubuntu/http-echo] 
+ - [cd, /home/ubuntu/http-echo]
+ - [npm, ci]
+ - [npm, run, prod]

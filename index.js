@@ -8,7 +8,7 @@ const HTTP_PORT = process.argv.length > 2 ? process.argv[2] : 8080
 
 app.get("*", (req, res) => {
     jsonResponse = {
-        woo: {
+        req: {
             headers: {
                 cookie: req.cookies,
                 sessionId: req.sessionID,
@@ -23,7 +23,6 @@ app.get("*", (req, res) => {
         }
     }
     res.send(`<pre>${JSON.stringify(jsonResponse, null, 2)}</pre>`)
-    // res.send("Hello")
 })
 
 app.listen(HTTP_PORT, () => log.info(`Example app listening on port ${HTTP_PORT}`))
