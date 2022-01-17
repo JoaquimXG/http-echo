@@ -1,0 +1,19 @@
+{
+  "name": "http-echo",
+  "version": "1.0.0",
+  "description": "Echoes HTTP requests for debugging",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/JoaquimXG/http-echo.git"
+  },
+  "author": "Joaquim Gomez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoaquimXG/http-echo/issues"
+  },
+  "homepage": "https://github.com/JoaquimXG/http-echo#readme"
+}
