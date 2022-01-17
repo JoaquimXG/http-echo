@@ -11,3 +11,7 @@
 {"level":"info","message":"Example app listening on port 8080","timestamp":"2022-01-17 11:00:17"}
 {"level":"http","message":{"req":{"headers":{"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"},"method":"GET","originalUrl":"/login","params":{},"query":{}}},"timestamp":"2022-01-17 11:00:18"}
 {"level":"http","message":{"req":{"headers":{"accept":"image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"},"method":"GET","originalUrl":"/favicon.ico","params":{},"query":{}}},"timestamp":"2022-01-17 11:00:18"}
+{"level":"info","message":"Example app listening on port 8080","timestamp":"2022-01-17 11:24:46"}
+{"level":"info","message":"Example app listening on port 8080","timestamp":"2022-01-17 11:25:03"}
+{"level":"info","message":"Example app listening on port 80","timestamp":"2022-01-17 11:25:38"}
+{"level":"info","message":"Example app listening on port 80","timestamp":"2022-01-17 11:25:54"}

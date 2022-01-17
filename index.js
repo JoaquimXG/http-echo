@@ -4,7 +4,7 @@ const log = require("./app/utils/logger")
 
 app.use(loggerMiddleware)
 
-const HTTP_PORT = 8080
+const HTTP_PORT = process.argv.length > 2 ? process.argv[2] : 8080
 
 app.get("*", (req, res) => {
     jsonResponse = {
