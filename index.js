@@ -14,6 +14,8 @@ app.get("*", (req, res) => {
                 sessionId: req.sessionID,
                 accept: req.headers.accept,
             },
+            source: req.ip,
+            targetHost: req.hostname,
             method: req.method,
             sessionId: req.sessionId,
             originalUrl: req.originalUrl,

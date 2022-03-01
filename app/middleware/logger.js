@@ -15,6 +15,7 @@ module.exports = (req, res, next) => {
         host: req.hostname
       },
       source: req.ip,
+      targetHost: req.hostname,
       method: req.method,
       sessionId: req.sessionId,
       originalUrl: req.originalUrl,
