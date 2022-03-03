@@ -7,22 +7,16 @@ const log = require("../utils/logger");
 //This is useful when developing and debugging the application
 module.exports = (req, res, next) => {
   log.http({
-    req: {
-      headers: {
-        cookie: req.cookies,
-        sessionId: req.sessionID,
-        accept: req.headers.accept,
-        host: req.hostname
-      },
-      source: req.ip,
-      targetHost: req.hostname,
-      method: req.method,
-      sessionId: req.sessionId,
-      originalUrl: req.originalUrl,
-      query: req.query,
-      body: req.body,
-      params: req.params,
-    },
+    headers: req.headers,
+    cookies: req.cookies,
+    sessionId: req.sessionID,
+    sourceIp: req.ip,
+    targetHost: req.hostname,
+    method: req.method,
+    originalUrl: req.originalUrl,
+    query: req.query,
+    body: req.body,
+    params: req.params,
   });
   next();
 };
