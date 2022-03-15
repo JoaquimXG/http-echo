@@ -3,6 +3,7 @@ const loggerMiddleware = require('./app/middleware/logger')
 const log = require("./app/utils/logger")
 const http = require("http")
 const https = require("https")
+const fs = require("fs")
 
 app.use(loggerMiddleware)
 
