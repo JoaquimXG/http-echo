@@ -22,4 +22,17 @@ app.get("*", (req, res) => {
   res.send(`<pre>${JSON.stringify(jsonResponse, null, 2)}</pre>`)
 })
 
-app.listen(HTTP_PORT, () => log.info(`Example app listening on port ${HTTP_PORT}`))
+// Listen both http & https ports
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer({
+  key: fs.readFileSync("./ssl/local.joaquimgomez.com.key"),
+  cert: fs.readFileSync("./ssl/local.joaquimgomez.com.crt"),
+}, app);
+
+httpServer.listen(process.env.HTTP_PORT, () => {
+  console.log(`HTTP Server running on port ${process.env.MMS_PORT}`);
+});
+
+httpsServer.listen(process.env.HTTPS_PORT, () => {
+  console.log(`HTTPS Server running on port ${process.env.MMS_HTTPS_PORT}`);
+});
