@@ -1,3 +1,4 @@
+require("dotenv").config()
 const app = require('express')()
 const loggerMiddleware = require('./app/middleware/logger')
 const log = require("./app/utils/logger")
