@@ -8,8 +8,6 @@ const fs = require("fs")
 
 app.use(loggerMiddleware)
 
-const HTTP_PORT = process.argv.length > 2 ? process.argv[2] : 8080
-
 app.get("*", (req, res) => {
   jsonResponse = {
     headers: req.headers,
