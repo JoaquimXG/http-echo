@@ -32,9 +32,9 @@ const httpsServer = https.createServer({
 }, app);
 
 httpServer.listen(process.env.HTTP_PORT, () => {
-  console.log(`HTTP Server running on port ${process.env.MMS_PORT}`);
+  console.log(`HTTP Server running on port ${process.env.HTTP_PORT}`);
 });
 
 httpsServer.listen(process.env.HTTPS_PORT, () => {
-  console.log(`HTTPS Server running on port ${process.env.MMS_HTTPS_PORT}`);
+  console.log(`HTTPS Server running on port ${process.env.HTTPS_PORT}`);
 });
