@@ -31,10 +31,10 @@ const httpsServer = https.createServer({
   cert: fs.readFileSync("./ssl/local.joaquimgomez.com.crt"),
 }, app);
 
-httpServer.listen(process.env.HTTP_PORT, () => {
+httpServer.listen(process.env.HTTP_PORT, "0.0.0.0", () => {
   console.log(`HTTP Server running on port ${process.env.HTTP_PORT}`);
 });
 
-httpsServer.listen(process.env.HTTPS_PORT, () => {
+httpsServer.listen(process.env.HTTPS_PORT, "0.0.0.0", () => {
   console.log(`HTTPS Server running on port ${process.env.HTTPS_PORT}`);
 });
