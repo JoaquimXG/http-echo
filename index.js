@@ -1,12 +1,30 @@
 require("dotenv").config()
-const app = require('express')()
+const express = require('express')
+const app = express()
 const loggerMiddleware = require('./app/middleware/logger')
 const log = require("./app/utils/logger")
 const http = require("http")
 const https = require("https")
 const fs = require("fs")
 
+app.use(express.json())
 app.use(loggerMiddleware)
+
+app.post("*", (req, res) => {
+  jsonResponse = {
+    headers: req.headers,
+    cookies: req.cookies,
+    sessionId: req.sessionID,
+    sourceIp: req.ip,
+    targetHost: req.hostname,
+    method: req.method,
+    originalUrl: req.originalUrl,
+    query: req.query,
+    body: req.body,
+    params: req.params,
+  }
+  res.send(`<pre>${JSON.stringify(jsonResponse, null, 2)}</pre>`)
+})
 
 app.get("*", (req, res) => {
   jsonResponse = {
