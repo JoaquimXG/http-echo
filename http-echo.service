@@ -1,0 +1,13 @@
+[Unit]
+Description=HTTP Echo
+
+[Service]
+Type=simple
+Restart=always
+User=nobody
+Group=nobody
+WorkingDirectory=/home/ubuntu/http-echo
+ExecStart=/usr/bin/npm run prod
+
+[Install]
+WantedBy=multi-user.target

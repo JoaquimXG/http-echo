@@ -1,0 +1,35 @@
+- name: HTTP-ECHO
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install apt dependancies
+      apt:
+        name:
+          - "nodejs" 
+          - "npm"
+        state: latest
+        update_cache: yes
+          
+    - name: Clone Repo
+      git:
+        repo: 'https://github.com/JoaquimXG/http-echo.git' 
+        dest: /home/ubuntu/http-echo
+    
+    - name: Install NodeJS dependancies
+      npm:
+        path: /home/ubuntu/http-echo
+        ci: yes
+          
+    - name: Install Service
+      copy:
+        src: /home/ubuntu/http-echo/http-echo.service
+        dest: /etc/systemd/system/http-echo.service
+        remote_src: yes
+        owner: root
+          
+    - name: Start HTTP-ECHO
+      service:
+        name: http-echo 
+        state: started
+        enabled: yes
+        provider: systemd
