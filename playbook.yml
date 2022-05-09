@@ -18,7 +18,7 @@
     - name: Install NodeJS dependancies
       npm:
         path: /home/ubuntu/http-echo
-        ci: yes
+        state: latest
           
     - name: Install Service
       copy:
@@ -30,6 +30,5 @@
     - name: Start HTTP-ECHO
       service:
         name: http-echo 
-        state: started
+        state: restarted
         enabled: yes
-        provider: systemd
