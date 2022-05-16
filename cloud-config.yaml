@@ -3,8 +3,26 @@ packages:
  - nodejs
  - npm
 
+write_files:
+ - path: /etc/systemd/system/http-echo.service
+   content: |
+      [Unit]
+      Description=HTTP Echo
+
+      [Service]
+      Type=simple
+      Restart=no
+      WorkingDirectory=/home/ubuntu/http-echo
+      ExecStart=/usr/bin/npm run prod --prefix /home/ubuntu/http-echo
+
+      [Install]
+      WantedBy=multi-user.target
+   permissions: '0644'
+
 runcmd:
  - [git, clone, 'https://github.com/JoaquimXG/http-echo.git', /home/ubuntu/http-echo] 
  - [cd, /home/ubuntu/http-echo]
  - [npm, ci]
- - [npm, run, prod]
+ - [systemctl, daemon-reload]
+ - [systemctl, enable, http-echo]
+ - [systemctl, start, http-echo]
