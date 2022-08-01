@@ -23,6 +23,7 @@ app.post("*", (req, res) => {
     body: req.body,
     params: req.params,
   }
+  res.set("Server", "http-echo")
   res.send(`<pre>${JSON.stringify(jsonResponse, null, 2)}</pre>`)
 })
 
@@ -39,6 +40,7 @@ app.get("*", (req, res) => {
     body: req.body,
     params: req.params,
   }
+  res.set("Server", "http-echo")
   res.send(`<pre>${JSON.stringify(jsonResponse, null, 2)}</pre>`)
 })
 
